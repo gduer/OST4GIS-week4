@@ -28,8 +28,11 @@
 ===================== */
 var resetMap = function() {
   /* =====================
-    Fill out this function definition
+  This function removes each marker in the myMarkers list from the map and then resets the existing marker list
+  to an empty list
   ===================== */
+  _.map(myMarkers, function (marker) {map.removeLayer(marker);});
+   myMarkers = [];
 };
 
 /* =====================
@@ -39,8 +42,11 @@ var resetMap = function() {
 ===================== */
 var getAndParseData = function() {
   /* =====================
-    Fill out this function definition
+  This functions retrieves and parses the data.
   ===================== */
+var request = $.ajax('https://raw.githubusercontent.com/CPLN-692-401/datasets/master/json/world-country-capitals.json');
+request.then(function(res){myData = JSON.parse(res);});
+return myData;
 };
 
 /* =====================
@@ -51,4 +57,17 @@ var plotData = function() {
   /* =====================
     Fill out this function definition
   ===================== */
+_.map(myData, function(item){
+  if (numericField1 == "") {numericField1 = 0;}
+  if (numericField2 == "") {numericField2 = 100;}
+
+  if(item.CapitalName.length > parseInt(numericField1) && item.CapitalName.length < parseInt(numericField2) &&
+  item.CapitalName.startsWith(stringField) && (item.ContinentName == "Asia") == booleanField)
+  {
+    Marker = L.marker([parseFloat(item.CapitalLatitude), parseFloat(item.CapitalLongitude)]);
+    myMarkers.push(Marker);
+    return Marker.addTo(map).bindPopup(item.CapitalName);
+  }
+}
+);
 };

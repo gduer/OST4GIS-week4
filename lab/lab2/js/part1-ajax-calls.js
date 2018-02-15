@@ -2,9 +2,9 @@
  * Using ajax, download some data from a remote server and log it to the console
  */
 
+x = $.ajax('https://raw.githubusercontent.com/CPLN-692-401/datasets/master/json/philadelphia-solar-installations.json');
 
-
-
+x.then(function(res){console.log(JSON.parse(res));});
 
 
 
@@ -22,4 +22,3 @@ var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/ton
 }).addTo(map);
 
 // L.terminator().addTo(map)
-

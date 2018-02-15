@@ -5,7 +5,7 @@ Add more styles here!
 body {
     padding: 0;
     overflow: hidden;
-    font-family: helvetica, arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .map {
@@ -23,5 +23,81 @@ body {
     top: 0;
     bottom: 0;
     overflow-y: auto;
-    padding: 20px;
+    padding: 0;
+    background-color: #e0e0e0;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: lightgray;
+  }
+
+.header {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: black;
+  color: #e65100;
+}
+
+.button {
+  font-size: 16px;
+  font-weight: normal;
+  border-radius: 4px;
+  background-color: #e65100;
+  color: white;
+  box-shadow: none;
+  border: none;
+}
+
+.form_title {
+  font-size: 16px;
+  margin-bottom: 4px;
+  color: white;
+}
+
+.form_input {
+  margin-bottom: 17px;
+}
+
+.school {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  background-color: white;
+  padding: 10px;
+  padding-bottom: 23px;
+  padding-top: 23px;
+  border-left: solid;
+  border-left-width: 5px;
+  border-color: #e65100;
+  box-shadow: 1px 1px 1px grey;
+}
+
+.school_title{
+  font-size: 17px;
+  margin-bottom: 3px;
+  color: #e65100;
+}
+
+.school_type{
+  font-size: 15px;
+  color: #455a64;
+
+}
+
+.school_address{
+  font-size: 13px;
+  margin-top: 12px;
+  color: #455a64;
+}
+
+.form{
+  background-color: #424242;
+  padding: 20px;
+  padding-left: 15px;
+}
+
+.results{
+  padding: 20px;
+  padding-left: 15px;
+  border-top: 1px;
+  border-top-style: solid;
 }
